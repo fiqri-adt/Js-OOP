@@ -24,7 +24,14 @@
         }
 
         // Menambahkan Property ke Prototype
-         
+         Person.prototype.sayBye = function () {
+             console.log("Good Bye");
+
+         }
+
+         Person.prototype.run = function () {
+             console.log(`${this.firstName} is running `);
+         }
     </script>
 </body>
 </html>
