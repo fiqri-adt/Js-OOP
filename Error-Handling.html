@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+</head>
+<body>
+    <script>
+        try {
+            console.log(MathUtil.sum());
+            console.log("Kode Block Try Akan Berhenti");
+        } catch (error) {
+            console.error(`Terjadi Error: ${error.messange}`);
+        }
+
+        console.log("Kode Program Tidak Akan Berhenti");
+
+        //Kata Kunci Finally
+        try {
+            console.log(MathUtil.sum());
+            console.log("Kode Block Try Akan Berhenti");
+        } catch (error) {
+            console.error(`Terjadi Error: ${error.messange}`);
+        } finally {
+            console.log("Kode Program Selesai");
+        }
+
+        //Try Finally
+        class Counter {
+            constructor() {
+                this.value = 1;
+            }
+
+            next() {
+                try {
+                    return this.value;
+                } finally {
+                    this.value++;
+                }
+            }
+        }
+
+        const counter = new Counter();
+        console.log(counter.next());
+        console.log(counter.next());
+        console.log(counter.next());
+        console.log(counter.next());
+        console.log(counter.next());
+
+       
+    </script>
+</body>
+</html>
